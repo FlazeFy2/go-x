@@ -18,4 +18,10 @@ type (
 		AccountInfos       []AccountInfo `json:"accountInfos"`
 		AdditionalInfo     T             `json:"additionalInfo"`
 	}
+	BalanceInquiryResponseShort[T any] struct {
+		ResponseCode    string `json:"responseCode"`
+		ResponseMessage string `json:"responseMessage"`
+		ReferenceNo     string `json:"referenceNo"`
+		Name            string `json:"name"`
+	}
 )
