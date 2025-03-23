@@ -105,6 +105,12 @@ type BillDetail struct {
 	BillAmountValue string                 `json:"billAmountValue"`
 	AdditionalInfo  map[string]interface{} `json:"additionalInfo"` // Use map for dynamic fields
 }
+type BillDetailShort struct {
+	BillCode      string `json:"billCode"`
+	BillNo        string `json:"billNo"`
+	BillShortName string `json:"billShortName"`
+	BillAmount    Amount `json:"billAmount"`
+}
 
 // MerchantInfo represents the information about a merchant.
 type MerchantInfo struct {
