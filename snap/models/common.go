@@ -154,6 +154,16 @@ type Items struct {
 	Desc        string `json:"desc"`
 }
 
+// Items represents the product details.
+type ItemsV2 struct {
+	ProductId   string `json:"productId"`
+	ProductName string `json:"productName"`
+	ProductSlug string `json:"productSlug"`
+	Qty         string `json:"qty"`
+	Desc        string `json:"desc"`
+	Price       int    `json:"price"`
+}
+
 // ScannerInfo represents the scanner device information.
 type ScannerInfo struct {
 	DeviceId      string `json:"deviceId"`
