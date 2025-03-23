@@ -177,6 +177,17 @@ type ScannerInfo struct {
 	DeviceModel   string `json:"deviceModel"`
 	DeviceIp      string `json:"deviceIp"`
 }
+type ScannerInfoDetail struct {
+	DeviceId        string    `json:"deviceId"`
+	DeviceVersion   string    `json:"deviceVersion"`
+	DeviceModel     string    `json:"deviceModel"`
+	DeviceIp        string    `json:"deviceIp"`
+	MacAddress      string    `json:"macAddress"`
+	Manufacturer    string    `json:"manufacturer"`
+	LastMaintenance time.Time `json:"lastMaintenance"`
+	SerialNumber    string    `json:"serialNumber"`
+	OsVersion       string    `json:"osVersion"`
+}
 
 type Item struct {
 	GoodsId  string `json:"goodsId"`
