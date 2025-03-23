@@ -140,6 +140,14 @@ func (dep *client) PrepareHTTPRequest(ctx context.Context, req *http.Request) (e
 	req.Header.Set(X_CLIENT_KEY, dep.ClientKey)
 	req.Header.Set(X_IDEMPOTENCY, uuid.NewString())
 
+	// 10 Mb validation file size
+	if req.Header.Get("Content-Type") == "multipart/form-data" {
+		err = req.ParseMultipartForm(10 << 20)
+		if err != nil {
+			return
+		}
+	}
+
 	//prepare signature
 	err = dep.PrepareSignAsymmetric(ctx, req)
 	if err != nil {
