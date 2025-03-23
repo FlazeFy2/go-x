@@ -146,6 +146,15 @@ func (dep *client) PrepareHTTPRequest(ctx context.Context, req *http.Request) (e
 		if err != nil {
 			return
 		}
+
+		// Max file upload
+		totalFiles := 0
+		for _, files := range req.MultipartForm.File {
+			totalFiles += len(files)
+		}
+		if totalFiles > 1 {
+			return fmt.Errorf("only one file is allowed to upload")
+		}
 	}
 
 	//prepare signature
