@@ -22,6 +22,11 @@ type (
 		TerminalType       string     `json:"terminalType"`
 		AdditionalInfo     T          `json:"additionalInfo"`
 	}
+	RegistrationContactResponse[T any] struct {
+		Email   string `json:"email"`
+		Name    string `json:"name"`
+		PhoneNo string `json:"phoneNo"`
+	}
 	RegistrationAccountResponse[T any] struct {
 		PResponseCode      string `json:"responseCode"`
 		ResponseMessage    string `json:"responseMessage"`
