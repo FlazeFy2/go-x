@@ -35,6 +35,8 @@ func (r rateLimiter) GetRateLimit(ctx context.Context, key string, limit, period
 		req = redis_rate.PerHour(limit)
 	case time.Minute:
 		req = redis_rate.PerMinute(limit)
+	case time.Hour:
+		req = redis_rate.PerHour(limit)
 	default:
 		req = redis_rate.PerSecond(limit)
 	}
